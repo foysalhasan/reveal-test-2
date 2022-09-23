@@ -1,32 +1,16 @@
-const userName = 'foysal'
-const passWord = '66445500'
+const revealItems = document.querySelectorAll('.reveal')
 
-const form = document.querySelector('.form')
-const loginSection = document.querySelector('.login__section')
-const blogSection = document.querySelector('.blog__section')
-const userField = document.querySelector('.username')
-const passField = document.querySelector('.password')
-
-const logOutBtn = document.querySelector('.btn')
-
-const logout = () => {
-  blogSection.classList.add('hide')
-  loginSection.classList.remove('hide')
+const revealElement = () => {
+  const innerHeight = window.innerHeight
+  const revealPoint = 150
+  revealItems.forEach((item) => {
+    const top = item.getBoundingClientRect().top
+    if (top < innerHeight - revealPoint) {
+      item.classList.add('active')
+    } else {
+      item.classList.remove('active')
+    }
+  })
 }
 
-logOutBtn.addEventListener('click', logout)
-
-form.addEventListener('submit', function (e) {
-  e.preventDefault()
-  const userValue = userField.value
-  const passValue = passField.value
-  console.log(passValue)
-  if (userValue === userName && passValue === passWord) {
-    loginSection.classList.add('hide')
-    blogSection.classList.remove('hide')
-    form.reset()
-  } else {
-    alert('UserName or Password Wrong')
-    form.reset()
-  }
-})
+window.addEventListener('scroll', revealElement)

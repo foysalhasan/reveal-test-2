@@ -1,0 +1,11 @@
+{
+  "name": "pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ws": "node-sass sass/style.scss css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,16 +1,20 @@
-const revealItems = document.querySelectorAll('.reveal')
+const slides = document.querySelectorAll('.slide')
+const btnLeft = document.querySelector('.btn-left')
+const btnRight = document.querySelector('.btn-right')
 
-const revealElement = () => {
-  const innerHeight = window.innerHeight
-  const revealPoint = 150
-  revealItems.forEach((item) => {
-    const top = item.getBoundingClientRect().top
-    if (top < innerHeight - revealPoint) {
-      item.classList.add('active')
-    } else {
-      item.classList.remove('active')
-    }
-  })
+let currSlide = 0
+const goToSlide = (slide) => slides.forEach((s, i) => (s.style.transform = `translateX(${(i - slide) * 100}%)`))
+goToSlide(0)
+
+const nextSlide = () => {
+  currSlide === slides.length - 1 ? (currSlide = 0) : currSlide++
+  goToSlide(currSlide)
 }
 
-window.addEventListener('scroll', revealElement)
+const prevSlide = () => {
+  currSlide === 0 ? (currSlide = slides.length - 1) : currSlide--
+  goToSlide(currSlide)
+}
+
+btnRight.addEventListener('click', nextSlide)
+btnLeft.addEventListener('click', prevSlide)

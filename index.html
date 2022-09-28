@@ -5,29 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <script src="./js/tailwind.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Animation on Scroll</title>
+    <title>SLIDER</title>
   </head>
   <body>
-    <section class="min-h-screen bg-teal-600 grid place-items-center">
-      <h1 class="text-white uppercase font-extrabold text-7xl">Lorem ipsum dolor sit amet, consectetur</h1>
-    </section>
-    <section class="min-h-screen bg-pink-600 grid place-items-center">
-      <div class="max-w-7xl w-full grid grid-cols-3 gap-5 mx-auto reveal">
-        <div class="bg-white rounded-md p-4 text-pink-600 font-semibold">
-          Lorem ipsum dolor, Lorem ipsum dolor sit amet consectetur adipisicing. sit amet consectetur adipisicing.
-        </div>
-        <div class="bg-white rounded-md p-4 text-pink-600 font-semibold">
-          Lorem ipsum dolor, Lorem ipsum dolor sit amet consectetur adipisicing. sit amet consectetur adipisicing.
-        </div>
-        <div class="bg-white rounded-md p-4 text-pink-600 font-semibold">
-          Lorem ipsum dolor, Lorem ipsum dolor sit amet consectetur adipisicing. sit amet consectetur adipisicing.
+    <section class="min-h-screen bg-gray-200">
+      <div class="container px-4 mx-auto">
+        <div class="grid place-items-center min-h-screen">
+          <div class="slider max-w-[1000px] bg-white mx-auto w-full relative h-[500px] rounded-xl overflow-hidden">
+            <div class="slide absolute top-0 w-full h-full transition-transform duration-1000">
+              <img src="https://cdn.pixabay.com/photo/2014/11/21/17/27/frog-540812_960_720.jpg" class="w-full h-full object-cover" />
+            </div>
+            <div class="slide absolute top-0 w-full h-full transition-transform duration-1000">
+              <img src="https://cdn.pixabay.com/photo/2013/06/30/18/56/butterfly-142506_960_720.jpg" class="w-full h-full object-cover" />
+            </div>
+            <div class="slide absolute top-0 w-full h-full transition-transform duration-1000">
+              <img src="https://cdn.pixabay.com/photo/2012/06/19/10/32/owl-50267_960_720.jpg" class="w-full h-full object-cover" />
+            </div>
+            <div class="absolute top-1/2 left-1/2 w-full flex justify-between py-3 -translate-y-1/2 -translate-x-1/2 items-center px-4">
+              <div class="btn-left w-24 h-24 flex shadow-sm justify-center items-center cursor-pointer rounded-full bg-white/50 hover:bg-white">
+                <i class="bx bx-chevron-left text-5xl"></i>
+              </div>
+              <div class="btn-right w-24 h-24 flex shadow-sm justify-center items-center cursor-pointer rounded-full bg-white/50 hover:bg-white">
+                <i class="bx bx-chevron-right text-5xl"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="min-h-screen bg-blue-600 grid place-items-center">
-      <h1 class="text-white uppercase font-extrabold text-7xl reveal">Lorem ipsum dolor sit amet, consectetur</h1>
     </section>
     <script src="./js/app.js"></script>
   </body>

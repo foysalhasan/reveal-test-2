@@ -11,4 +11,45 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.5;
-  text-align: center; }
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #ccc; }
+
+.container {
+  max-width: 90vw;
+  width: 100%;
+  margin: 0 auto;
+  display: flex; }
+
+.panel {
+  flex: 0.5;
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: flex 0.3s linear; }
+  .panel h3 {
+    color: #fff;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease-in 0.5s; }
+  .panel.active {
+    flex: 5; }
+  .panel.active > h3 {
+    opacity: 1;
+    transform: translateY(0); }
+
+@media (max-width: 450px) {
+  .container {
+    max-width: 100vw; }
+  .panel:nth-of-type(4), .panel:nth-of-type(5) {
+    display: none; } }
